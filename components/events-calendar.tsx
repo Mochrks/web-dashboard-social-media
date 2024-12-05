@@ -32,7 +32,7 @@ export function EventsCalendar() {
           onSelect={setDate}
           className="rounded-md border"
           components={{
-            day: ({ date, ...props }) => {
+            Day: ({ date, ...props }) => {
               const event = events.find(
                 (e) => e.date.toDateString() === date.toDateString()
               )
@@ -41,7 +41,6 @@ export function EventsCalendar() {
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <div {...props} className="relative">
-                        <div {...props} />
                         <Badge
                           variant="secondary"
                           className="absolute top-0 right-0 -mr-1 -mt-1 h-2 w-2 rounded-full p-0"
@@ -67,7 +66,7 @@ export function EventsCalendar() {
                   </HoverCard>
                 )
               }
-              return <div {...props} />
+              return null
             },
           }}
         />

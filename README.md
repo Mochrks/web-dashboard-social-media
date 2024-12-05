@@ -33,7 +33,7 @@ A comprehensive social media analytics dashboard built with Next.js, providing r
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/web-dashboard-social-media.git
+git clone https://github.com/Mochrks/web-dashboard-social-media.git
 cd web-dashboard-social-media
 
   ```

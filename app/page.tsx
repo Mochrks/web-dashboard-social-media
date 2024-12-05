@@ -7,7 +7,7 @@ import { UserActivity } from "@/components/user-activity"
 
 export default function DashboardPage() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen  transition-colors duration-200">
       <Sidebar className="hidden lg:block" />
       <div className="flex-1">
         <Header />

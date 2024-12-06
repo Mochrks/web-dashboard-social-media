@@ -143,6 +143,14 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
         </main>
+        <footer className="mt-auto py-6 ">
+          <div className="container mx-auto text-center text-sm text-black dark:text-white">
+            © {new Date().getFullYear()} All rights reserved by{" "}
+            <a href="https://github.com/Mochrks" className="hover:underline text-blue-500">
+              @mochrks
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
   )

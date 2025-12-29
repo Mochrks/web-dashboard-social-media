@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts";
 
 const data = [
   { name: "Tech Conference", attendees: 500, engagement: 85 },
@@ -9,7 +9,7 @@ const data = [
   { name: "Networking Mixer", attendees: 100, engagement: 78 },
   { name: "AI Webinar", attendees: 1000, engagement: 88 },
   { name: "Hackathon", attendees: 150, engagement: 95 },
-]
+];
 
 export function EventPerformance() {
   return (
@@ -30,6 +30,5 @@ export function EventPerformance() {
         </ResponsiveContainer>
       </CardContent>
     </Card>
-  )
+  );
 }
-

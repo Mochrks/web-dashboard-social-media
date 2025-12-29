@@ -14,8 +14,6 @@
 
 A comprehensive social media analytics dashboard built with Next.js, providing real-time insights and performance tracking across multiple social media platforms.
 
-
-
 ## 🚀 Tech Stack
 
 - Next.js 13.x
@@ -32,28 +30,29 @@ A comprehensive social media analytics dashboard built with Next.js, providing r
 ## 🛠️ Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/Mochrks/web-dashboard-social-media.git
 cd web-dashboard-social-media
 
-  ```
+```
 
 - **Install dependencies**
 
-    ```bash
-    npm install
-    ```
+  ```bash
+  npm install
+  ```
 
 - **Run the development server**
 
-    ```bash
-    npm run dev
-    ```
+  ```bash
+  npm run dev
+  ```
 
 - The application will be running on [http://localhost:3000](http://localhost:3000).
 
-
 ## Connect with me:
+
 [![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mochrks)
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@Gdvisuel)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/mochrks)

@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const categories = [
   { name: "Technology", count: 45 },
@@ -10,7 +10,7 @@ const categories = [
   { name: "Finance", count: 18 },
   { name: "Travel", count: 15 },
   { name: "Food", count: 12 },
-]
+];
 
 export function PostCategories() {
   return (
@@ -28,6 +28,5 @@ export function PostCategories() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-

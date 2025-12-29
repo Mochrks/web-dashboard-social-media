@@ -1,8 +1,17 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Bar,
+  BarChart,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const postData = [
   { name: "Mon", posts: 4, engagement: 400 },
@@ -12,7 +21,7 @@ const postData = [
   { name: "Fri", posts: 3, engagement: 400 },
   { name: "Sat", posts: 6, engagement: 600 },
   { name: "Sun", posts: 4, engagement: 400 },
-]
+];
 
 export function PostStats() {
   return (
@@ -49,6 +58,5 @@ export function PostStats() {
         </Tabs>
       </CardContent>
     </Card>
-  )
+  );
 }
-

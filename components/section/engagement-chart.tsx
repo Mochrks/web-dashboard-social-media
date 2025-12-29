@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const data = [
   { name: "Jan", likes: 4000, comments: 2400, shares: 2400 },
@@ -11,7 +11,7 @@ const data = [
   { name: "May", likes: 1890, comments: 4800, shares: 2181 },
   { name: "Jun", likes: 2390, comments: 3800, shares: 2500 },
   { name: "Jul", likes: 3490, comments: 4300, shares: 2100 },
-]
+];
 
 export function EngagementChart() {
   return (
@@ -32,6 +32,5 @@ export function EngagementChart() {
         </ResponsiveContainer>
       </CardContent>
     </Card>
-  )
+  );
 }
-

@@ -1,8 +1,8 @@
-import { Sidebar } from "@/components/demo/sidebar"
-import { Header } from "@/components/demo/header"
-import { PostList } from "@/components/section/post-list"
-import { PostStats } from "@/components/section/post-stats"
-import { PostCategories } from "@/components/section/post-categories"
+import { Sidebar } from "@/components/demo/sidebar";
+import { Header } from "@/components/demo/header";
+import { PostList } from "@/components/section/post-list";
+import { PostStats } from "@/components/section/post-stats";
+import { PostCategories } from "@/components/section/post-categories";
 
 export default function PostsPage() {
   return (
@@ -20,6 +20,5 @@ export default function PostsPage() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-

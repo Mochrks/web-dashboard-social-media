@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPin } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin } from "lucide-react";
 
 export function UserMap() {
   return (
@@ -26,6 +26,5 @@ export function UserMap() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Bell, Menu, Search, User } from 'lucide-react'
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Bell, Menu, Search, User } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,28 +11,24 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { ModeToggle } from "@/components/demo/mode-toggle"
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
-import { SidebarContent } from "./sidebar"
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { ModeToggle } from "@/components/demo/mode-toggle";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { SidebarContent } from "./sidebar";
 
 export function Header() {
-  const [notifications, setNotifications] = useState(3)
-  const [isOpen, setIsOpen] = useState(false)
+  const [notifications, setNotifications] = useState(3);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full  border-b-2 md:border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="w-full flex h-14 items-center space-x-5 ">
         <div className="ml-4 border-2 rounded-md">
-          <Sheet open={isOpen} onOpenChange={setIsOpen} >
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                className="md:hidden z-40"
-                size="icon"
-              >
+              <Button variant="ghost" className="md:hidden z-40" size="icon">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -46,10 +42,7 @@ export function Header() {
             <form>
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search"
-                  className="pl-8"
-                />
+                <Input placeholder="Search" className="pl-8" />
               </div>
             </form>
           </div>
@@ -93,10 +86,8 @@ export function Header() {
               <DropdownMenuItem>Log out</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-
         </div>
       </div>
     </header>
-  )
+  );
 }
-

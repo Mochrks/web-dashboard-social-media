@@ -1,8 +1,17 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Bar,
+  BarChart,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const userData = [
   { name: "Jan", newUsers: 400, activeUsers: 2400 },
@@ -12,7 +21,7 @@ const userData = [
   { name: "May", newUsers: 189, activeUsers: 2181 },
   { name: "Jun", newUsers: 239, activeUsers: 2500 },
   { name: "Jul", newUsers: 349, activeUsers: 2100 },
-]
+];
 
 export function UserStats() {
   return (
@@ -49,6 +58,5 @@ export function UserStats() {
         </Tabs>
       </CardContent>
     </Card>
-  )
+  );
 }
-

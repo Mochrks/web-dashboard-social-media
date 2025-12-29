@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 
 const data = [
   { name: "18-24", value: 400 },
@@ -9,9 +9,9 @@ const data = [
   { name: "35-44", value: 300 },
   { name: "45-54", value: 200 },
   { name: "55+", value: 100 },
-]
+];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8"]
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8"];
 
 export function AudiencedemographicsChart() {
   return (
@@ -41,6 +41,5 @@ export function AudiencedemographicsChart() {
         </ResponsiveContainer>
       </CardContent>
     </Card>
-  )
+  );
 }
-

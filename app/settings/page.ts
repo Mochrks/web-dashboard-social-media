@@ -1,6 +1,6 @@
-export { default } from '@/components/pages/settings';
+export { default } from "@/components/pages/settings";
 
 export const metadata = {
-  description: 'Dashboard Social Media - Settings',
-  title: 'Dashboard Social Media - Settings',
+  description: "Dashboard Social Media - Settings",
+  title: "Dashboard Social Media - Settings",
 };

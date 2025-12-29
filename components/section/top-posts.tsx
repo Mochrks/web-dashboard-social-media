@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 
 const topPosts = [
   {
@@ -33,7 +33,7 @@ const topPosts = [
     likes: 756,
     comments: 62,
   },
-]
+];
 
 export function TopPosts() {
   return (
@@ -66,6 +66,5 @@ export function TopPosts() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-

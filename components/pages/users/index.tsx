@@ -1,8 +1,8 @@
-import { Sidebar } from "@/components/demo/sidebar"
-import { Header } from "@/components/demo/header"
-import { UserList } from "@/components/section/user-list"
-import { UserStats } from "@/components/section/user-stats"
-import { UserMap } from "@/components/section/user-map"
+import { Sidebar } from "@/components/demo/sidebar";
+import { Header } from "@/components/demo/header";
+import { UserList } from "@/components/section/user-list";
+import { UserStats } from "@/components/section/user-stats";
+import { UserMap } from "@/components/section/user-map";
 
 export default function UsersPage() {
   return (
@@ -20,6 +20,5 @@ export default function UsersPage() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-

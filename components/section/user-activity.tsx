@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Table,
@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 const userActivity = [
   {
@@ -35,7 +35,7 @@ const userActivity = [
     action: "Updated profile picture",
     timestamp: "2023-06-01T10:00:00",
   },
-]
+];
 
 export function UserActivity() {
   return (
@@ -52,11 +52,19 @@ export function UserActivity() {
           <TableRow key={index}>
             <TableCell className="font-medium">{activity.user}</TableCell>
             <TableCell>{activity.action}</TableCell>
-            <TableCell>{new Date(activity.timestamp).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })}</TableCell>
+            <TableCell>
+              {new Date(activity.timestamp).toLocaleString("en-US", {
+                year: "numeric",
+                month: "numeric",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+              })}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
     </Table>
-  )
+  );
 }
-

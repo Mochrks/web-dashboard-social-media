@@ -1,6 +1,6 @@
-import { Sidebar } from "@/components/demo/sidebar"
-import { Header } from "@/components/demo/header"
-import { SettingsTabs } from "@/components/section/settings-tabs"
+import { Sidebar } from "@/components/demo/sidebar";
+import { Header } from "@/components/demo/header";
+import { SettingsTabs } from "@/components/section/settings-tabs";
 
 export default function SettingsPage() {
   return (
@@ -14,6 +14,5 @@ export default function SettingsPage() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-

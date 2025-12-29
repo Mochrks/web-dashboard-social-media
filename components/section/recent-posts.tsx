@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const recentPosts = [
   {
@@ -33,7 +33,7 @@ const recentPosts = [
     initials: "EB",
     date: "2 days ago",
   },
-]
+];
 
 export function RecentPosts() {
   return (
@@ -53,6 +53,5 @@ export function RecentPosts() {
         </div>
       ))}
     </div>
-  )
+  );
 }
-

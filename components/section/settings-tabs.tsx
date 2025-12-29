@@ -1,19 +1,32 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Switch } from "@/components/ui/switch"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function SettingsTabs() {
-  const [name, setName] = useState("John Doe")
-  const [email, setEmail] = useState("john@example.com")
-  const [notifications, setNotifications] = useState(true)
-  const [theme, setTheme] = useState("light")
+  const [name, setName] = useState("John Doe");
+  const [email, setEmail] = useState("john@example.com");
+  const [notifications, setNotifications] = useState(true);
+  const [theme, setTheme] = useState("light");
 
   return (
     <Tabs defaultValue="account" className="w-full">
@@ -49,9 +62,7 @@ export function SettingsTabs() {
         <Card>
           <CardHeader>
             <CardTitle>Notifications</CardTitle>
-            <CardDescription>
-              Configure how you receive notifications.
-            </CardDescription>
+            <CardDescription>Configure how you receive notifications.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="flex items-center space-x-2">
@@ -73,8 +84,8 @@ export function SettingsTabs() {
           <CardHeader>
             <CardTitle>Appearance</CardTitle>
             <CardDescription>
-              Customize the appearance of the app. Automatically switch between day
-              and night themes.
+              Customize the appearance of the app. Automatically switch between day and night
+              themes.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -98,6 +109,5 @@ export function SettingsTabs() {
         </Card>
       </TabsContent>
     </Tabs>
-  )
+  );
 }
-

@@ -1,6 +1,6 @@
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
-import { SettingsTabs } from "@/components/settings-tabs"
+import { Sidebar } from "@/components/demo/sidebar"
+import { Header } from "@/components/demo/header"
+import { SettingsTabs } from "@/components/section/settings-tabs"
 
 export default function SettingsPage() {
   return (

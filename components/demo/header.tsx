@@ -14,8 +14,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { ModeToggle } from "@/components/mode-toggle"
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet"
+import { ModeToggle } from "@/components/demo/mode-toggle"
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
 import { SidebarContent } from "./sidebar"
 
 export function Header() {

@@ -1,8 +1,8 @@
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
-import { PostList } from "@/components/post-list"
-import { PostStats } from "@/components/post-stats"
-import { PostCategories } from "@/components/post-categories"
+import { Sidebar } from "@/components/demo/sidebar"
+import { Header } from "@/components/demo/header"
+import { PostList } from "@/components/section/post-list"
+import { PostStats } from "@/components/section/post-stats"
+import { PostCategories } from "@/components/section/post-categories"
 
 export default function PostsPage() {
   return (

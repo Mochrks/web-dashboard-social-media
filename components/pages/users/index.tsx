@@ -1,8 +1,8 @@
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
-import { UserList } from "@/components/user-list"
-import { UserStats } from "@/components/user-stats"
-import { UserMap } from "@/components/user-map"
+import { Sidebar } from "@/components/demo/sidebar"
+import { Header } from "@/components/demo/header"
+import { UserList } from "@/components/section/user-list"
+import { UserStats } from "@/components/section/user-stats"
+import { UserMap } from "@/components/section/user-map"
 
 export default function UsersPage() {
   return (

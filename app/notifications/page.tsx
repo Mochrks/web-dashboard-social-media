@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { Bell, Heart, MessageCircle, UserPlus, TrendingUp, Check } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const notifications = [
   {
@@ -91,8 +92,4 @@ export default function NotificationsPage() {
       </main>
     </div>
   );
-}
-
-function cn(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
 }

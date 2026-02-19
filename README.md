@@ -12,7 +12,7 @@
 
 ## 📋 Project Description
 
-A comprehensive social media analytics dashboard built with Next.js, providing real-time insights and performance tracking across multiple social media platforms.
+A comprehensive social media analytics dashboard builts with Next.js, providing real-time insights and performance tracking across multiple social media platforms.
 
 ## 🚀 Tech Stack
 

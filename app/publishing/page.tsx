@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { Plus, ChevronLeft, ChevronRight } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 const calendarPosts = [
   {
@@ -236,6 +237,8 @@ export default function PublishingPage() {
             </Card>
           </aside>
         </div>
+
+        <Footer />
       </main>
     </div>
   );

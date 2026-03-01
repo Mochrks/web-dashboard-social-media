@@ -13,6 +13,7 @@ import {
   Clock,
 } from "lucide-react";
 import { useState } from "react";
+import { Footer } from "@/components/layout/footer";
 
 export default function SecurityPage() {
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(true);
@@ -21,7 +22,7 @@ export default function SecurityPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="mb-8">
           <h1 className="text-2xl font-bold">Security Settings</h1>
           <p className="text-slate-500">Protect your account with advanced security features</p>
@@ -210,6 +211,8 @@ export default function SecurityPage() {
             ))}
           </div>
         </Card>
+
+        <Footer />
       </main>
     </div>
   );

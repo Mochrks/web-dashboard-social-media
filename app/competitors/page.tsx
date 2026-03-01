@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, Users, BarChart3 } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 const competitors = [
   {
@@ -38,7 +39,7 @@ export default function CompetitorsPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="mb-8">
           <h1 className="text-2xl font-bold">Competitor Analysis</h1>
           <p className="text-slate-500">Track and compare your competitors&apos; performance</p>
@@ -90,6 +91,8 @@ export default function CompetitorsPage() {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </main>
     </div>
   );

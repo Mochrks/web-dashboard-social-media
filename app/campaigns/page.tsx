@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { Target, Calendar, BarChart3, Users } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 const campaigns = [
   {
@@ -38,7 +39,7 @@ export default function CampaignsPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl font-bold">Campaigns</h1>
@@ -94,6 +95,8 @@ export default function CampaignsPage() {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </main>
     </div>
   );

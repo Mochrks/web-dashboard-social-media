@@ -3,13 +3,14 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { Download } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 export default function AnalyticsPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
 
-      <main className="flex-1 p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-6 lg:p-10 overflow-y-auto flex flex-col">
         {/* Header */}
         <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
@@ -316,6 +317,8 @@ export default function AnalyticsPage() {
             </Card>
           </div>
         </div>
+
+        <Footer />
       </main>
     </div>
   );

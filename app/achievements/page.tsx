@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { Award, Trophy, Star, Target } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 const achievements = [
   {
@@ -59,7 +60,7 @@ export default function AchievementsPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="mb-8">
           <h1 className="text-2xl font-bold">Achievements</h1>
           <p className="text-slate-500">Track your milestones and unlock rewards</p>
@@ -125,6 +126,8 @@ export default function AchievementsPage() {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </main>
     </div>
   );

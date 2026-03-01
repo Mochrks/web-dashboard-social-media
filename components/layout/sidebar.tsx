@@ -31,6 +31,8 @@ import {
   HelpCircle,
   Shield,
   Database,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -102,13 +104,18 @@ export function Sidebar() {
         className={cn(
           "fixed lg:sticky top-0 h-screen z-40 transition-all duration-300",
           "border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900",
-          "flex flex-col py-6 overflow-y-auto",
+          "flex flex-col py-6 overflow-y-auto no-scrollbar",
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
           isCollapsed ? "w-20 px-2" : "w-64 px-4"
         )}
       >
         {/* Logo */}
-        <div className="mb-8 flex items-center justify-between px-2">
+        <div
+          className={cn(
+            "mb-8 flex items-center px-2 pt-16 lg:pt-0",
+            isCollapsed ? "justify-center" : "justify-between"
+          )}
+        >
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shrink-0">
               <Sparkles className="w-5 h-5" />
@@ -120,8 +127,12 @@ export function Sidebar() {
           {!isCollapsed && <ThemeToggle />}
         </div>
 
-        {/* Navigation */}
-        <nav className="flex-1 space-y-6 overflow-y-auto">
+        <nav
+          className={cn(
+            "flex-1 overflow-y-auto no-scrollbar",
+            isCollapsed ? "space-y-4" : "space-y-6"
+          )}
+        >
           {Object.entries(groupedNav).map(([category, items]) => (
             <div key={category}>
               {!isCollapsed && (
@@ -140,7 +151,8 @@ export function Sidebar() {
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
-                        "flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition-smooth text-sm group relative",
+                        "flex items-center rounded-lg font-medium transition-smooth text-sm group relative",
+                        isCollapsed ? "justify-center py-2.5" : "gap-3 px-3 py-2.5",
                         isActive
                           ? "bg-primary/10 text-primary"
                           : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
@@ -167,9 +179,9 @@ export function Sidebar() {
         {/* Collapse Toggle - Desktop Only */}
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="hidden lg:flex items-center justify-center py-2 mb-4 text-slate-500 hover:text-primary transition-smooth"
+          className="hidden lg:flex items-center justify-center py-2 mb-4 text-slate-500 hover:text-primary transition-smooth bg-slate-100 dark:bg-slate-800 border-y border-slate-200 dark:border-slate-800"
         >
-          {isCollapsed ? "→" : "←"}
+          {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
         </button>
 
         {/* Pro Plan Card */}
@@ -192,8 +204,8 @@ export function Sidebar() {
         {/* User Profile */}
         <div
           className={cn(
-            "flex items-center gap-3 px-2 pt-4 border-t border-slate-200 dark:border-slate-800",
-            isCollapsed && "justify-center"
+            "flex items-center pt-4 border-t border-slate-200 dark:border-slate-800",
+            isCollapsed ? "justify-center" : "gap-3 px-2"
           )}
         >
           <img

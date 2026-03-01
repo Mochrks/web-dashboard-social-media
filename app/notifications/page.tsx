@@ -4,6 +4,7 @@ import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { Bell, Heart, MessageCircle, UserPlus, TrendingUp, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Footer } from "@/components/layout/footer";
 
 const notifications = [
   {
@@ -48,7 +49,7 @@ export default function NotificationsPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl font-bold">Notifications</h1>
@@ -89,6 +90,8 @@ export default function NotificationsPage() {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </main>
     </div>
   );

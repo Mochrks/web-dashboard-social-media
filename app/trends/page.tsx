@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, TrendingDown } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 const trendingTopics = [
   { tag: "#DigitalMarketing", posts: "1.2M", growth: "+24%", trend: "up" },
@@ -17,7 +18,7 @@ export default function TrendsPage() {
     <div className="flex min-h-screen">
       <Sidebar />
 
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="mb-8">
           <h1 className="text-2xl font-bold">Trending Topics</h1>
           <p className="text-slate-500">Discover what&apos;s trending in your industry</p>
@@ -46,6 +47,8 @@ export default function TrendsPage() {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </main>
     </div>
   );

@@ -78,6 +78,13 @@ const config: Config = {
           },
         },
       },
+      gridTemplateColumns: {
+        "24": "repeat(24, minmax(0, 1fr))",
+        "25": "repeat(25, minmax(0, 1fr))",
+      },
+      gridColumn: {
+        "span-24": "span 24 / span 24",
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

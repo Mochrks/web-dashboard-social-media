@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { Link2, Check, Plus } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 const integrations = [
   { name: "Instagram", connected: true, icon: "📷", description: "Connect your Instagram account" },
@@ -19,7 +20,7 @@ export default function IntegrationsPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="mb-8">
           <h1 className="text-2xl font-bold">Integrations</h1>
           <p className="text-slate-500">Connect your favorite platforms and tools</p>
@@ -55,6 +56,8 @@ export default function IntegrationsPage() {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </main>
     </div>
   );

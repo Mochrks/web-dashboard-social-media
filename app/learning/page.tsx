@@ -3,6 +3,7 @@
 import { Sidebar } from "@/components/layout/sidebar";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Play, Clock, CheckCircle } from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 
 const courses = [
   {
@@ -43,7 +44,7 @@ export default function LearningPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto flex flex-col">
         <header className="mb-8">
           <h1 className="text-2xl font-bold">Learning Center</h1>
           <p className="text-slate-500">Enhance your skills with our courses and tutorials</p>
@@ -126,6 +127,8 @@ export default function LearningPage() {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </main>
     </div>
   );

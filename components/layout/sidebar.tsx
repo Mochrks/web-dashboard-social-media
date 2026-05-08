@@ -76,26 +76,22 @@ const groupedNav = navigation.reduce(
   {} as Record<string, typeof navigation>
 );
 
-export function Sidebar() {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-white dark:bg-slate-900 rounded-lg shadow-lg border border-slate-200 dark:border-slate-800"
-      >
-        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
-
       {/* Overlay for mobile */}
-      {isMobileMenuOpen && (
+      {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/50 z-40"
-          onClick={() => setIsMobileMenuOpen(false)}
+          className="lg:hidden fixed inset-0 bg-black/50 z-40 backdrop-blur-sm transition-opacity"
+          onClick={onClose}
         />
       )}
 
@@ -105,7 +101,7 @@ export function Sidebar() {
           "fixed lg:sticky top-0 h-screen z-40 transition-all duration-300",
           "border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900",
           "flex flex-col py-6 overflow-y-auto no-scrollbar",
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
+          isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
           isCollapsed ? "w-20 px-2" : "w-64 px-4"
         )}
       >
@@ -149,7 +145,7 @@ export function Sidebar() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={onClose}
                       className={cn(
                         "flex items-center rounded-lg font-medium transition-smooth text-sm group relative",
                         isCollapsed ? "justify-center py-2.5" : "gap-3 px-3 py-2.5",
@@ -186,7 +182,7 @@ export function Sidebar() {
 
         {/* Pro Plan Card */}
         {!isCollapsed && (
-          <div className="mb-4">
+          <div className="mt-auto mb-4">
             <div className="flex flex-col p-4 bg-lavender dark:bg-primary/5 rounded-xl border border-primary/10">
               <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">
                 Pro Plan
@@ -200,26 +196,6 @@ export function Sidebar() {
             </div>
           </div>
         )}
-
-        {/* User Profile */}
-        <div
-          className={cn(
-            "flex items-center pt-4 border-t border-slate-200 dark:border-slate-800",
-            isCollapsed ? "justify-center" : "gap-3 px-2"
-          )}
-        >
-          <img
-            className="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-slate-800 shadow-sm shrink-0"
-            src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex"
-            alt="User profile"
-          />
-          {!isCollapsed && (
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-bold truncate">Alex Rivera</p>
-              <p className="text-xs text-slate-500 truncate">@arivera_creates</p>
-            </div>
-          )}
-        </div>
       </aside>
     </>
   );

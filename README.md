@@ -10,11 +10,11 @@
   <img src="https://skillicons.dev/icons?i=nextjs,tailwind,typescript,react" alt="Tech Stack" />
 </p>
 
-## 📋 Project Description
+##  Project Description
 
 A comprehensive social media analytics dashboard builts with Next.js, providing real-time insights and performance tracking across multiple social media platforms.
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 - Next.js 13.x
 - Tailwind CSS
@@ -22,12 +22,12 @@ A comprehensive social media analytics dashboard builts with Next.js, providing 
 - Shadcn UI
 - React
 
-## 🔧 Prerequisites
+##  Prerequisites
 
 - Node.js (v18 or later)
 - npm / yarn / pnpm
 
-## 🛠️ Installation
+##  Installation
 
 1. Clone the repository
 

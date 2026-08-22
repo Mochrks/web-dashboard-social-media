@@ -4,9 +4,24 @@ import { Card } from "@/components/ui/card";
 import { Upload } from "lucide-react";
 
 export default function MediaPage() {
-  const mediaItems = Array.from({ length: 12 }, (_, i) => ({
+  const unsplashIds = [
+    "1494790108377-be9c29b29330",
+    "1534528741775-53994a69daeb",
+    "1506794778202-cad84cf45f1d",
+    "1472099645785-5658abf4ff4e",
+    "1498050108023-c5249f4df085",
+    "1502823403499-6ccf18320c1e",
+    "1511367461989-f85a21fda167",
+    "1461749280684-dccba630e2f6",
+    "1431512285697-7671b56a42a2",
+    "1550525811-e5869dd03032",
+    "1503023345310-bd7c1de61c7d",
+    "1529665253569-6d01c0eaf7b6",
+  ];
+
+  const mediaItems = unsplashIds.map((id, i) => ({
     id: i + 1,
-    url: `https://images.unsplash.com/photo-${1500000000000 + i * 10000000}?w=400&h=400&fit=crop`,
+    url: `https://images.unsplash.com/photo-${id}?w=400&h=400&fit=crop`,
     type: "image",
   }));
 

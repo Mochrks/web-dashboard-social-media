@@ -1,8 +1,10 @@
 "use client";
 
-import { Search, Bell, Mail, Users, Menu } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, Bell, Mail, Users, Menu, Settings, Calendar, LayoutDashboard } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,6 +13,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandShortcut,
+} from "@/components/ui/command";
 import { Badge } from "@/components/ui/badge";
 
 interface NavbarProps {
@@ -18,6 +29,19 @@ interface NavbarProps {
 }
 
 export function Navbar({ onMenuClick }: NavbarProps) {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
   return (
     <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-4 sm:px-6 lg:px-8">
       <div className="flex items-center gap-4 flex-1">
@@ -28,12 +52,51 @@ export function Navbar({ onMenuClick }: NavbarProps) {
 
         {/* Search Bar */}
         <div className="relative w-full max-w-md hidden md:block">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-          <Input
-            placeholder="Search analytics, posts, or trends..."
-            className="pl-10 bg-slate-50/50 dark:bg-slate-800/50 border-none focus-visible:ring-1 focus-visible:ring-primary h-10"
-          />
+          <Button
+            variant="outline"
+            className="w-full justify-start text-sm text-slate-500 bg-slate-50/50 dark:bg-slate-800/50 border-none h-10"
+            onClick={() => setOpen(true)}
+          >
+            <Search className="mr-2 h-4 w-4" />
+            Search analytics, posts, or trends...
+            <kbd className="pointer-events-none absolute right-2 top-2.5 hidden h-5 select-none items-center gap-1 rounded border bg-slate-100 dark:bg-slate-700 px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+              <span className="text-xs">⌘</span>K
+            </kbd>
+          </Button>
         </div>
+
+        <CommandDialog open={open} onOpenChange={setOpen}>
+          <CommandInput placeholder="Type a command or search..." />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading="Suggestions">
+              <CommandItem>
+                <Calendar className="mr-2 h-4 w-4" />
+                <span>Calendar</span>
+              </CommandItem>
+              <CommandItem>
+                <Search className="mr-2 h-4 w-4" />
+                <span>Search Analytics</span>
+              </CommandItem>
+              <CommandItem>
+                <LayoutDashboard className="mr-2 h-4 w-4" />
+                <span>Dashboard</span>
+              </CommandItem>
+            </CommandGroup>
+            <CommandGroup heading="Settings">
+              <CommandItem>
+                <Users className="mr-2 h-4 w-4" />
+                <span>Profile</span>
+                <CommandShortcut>⌘P</CommandShortcut>
+              </CommandItem>
+              <CommandItem>
+                <Settings className="mr-2 h-4 w-4" />
+                <span>Settings</span>
+                <CommandShortcut>⌘S</CommandShortcut>
+              </CommandItem>
+            </CommandGroup>
+          </CommandList>
+        </CommandDialog>
       </div>
 
       <div className="flex items-center gap-2 sm:gap-4">
@@ -211,6 +274,8 @@ export function Navbar({ onMenuClick }: NavbarProps) {
             </div>
           </DropdownMenuContent>
         </DropdownMenu>
+
+        <ThemeToggle />
 
         <div className="h-8 w-px bg-slate-200 dark:bg-slate-800 mx-2 hidden sm:block" />
 

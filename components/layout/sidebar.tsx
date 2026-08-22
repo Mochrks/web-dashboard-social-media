@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import {
   LayoutDashboard,
   BarChart3,
@@ -22,6 +22,8 @@ import {
   Zap,
   Menu,
   X,
+  PanelLeftClose,
+  PanelLeftOpen,
   Bell,
   Wallet,
   UserPlus,
@@ -108,8 +110,8 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         {/* Logo */}
         <div
           className={cn(
-            "mb-8 flex items-center px-2 pt-16 lg:pt-0",
-            isCollapsed ? "justify-center" : "justify-between"
+            "mb-8 flex items-center px-2 pt-4 lg:pt-0",
+            isCollapsed ? "flex-col gap-4 justify-center" : "justify-between"
           )}
         >
           <div className="flex items-center gap-3">
@@ -119,66 +121,74 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             {!isCollapsed && <span className="font-bold text-xl tracking-tight">Insightly</span>}
           </div>
 
-          {/* Theme Toggle */}
-          {!isCollapsed && <ThemeToggle />}
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="hidden lg:flex items-center justify-center p-2 rounded-lg text-slate-500 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-smooth"
+          >
+            {isCollapsed ? (
+              <PanelLeftOpen className="w-5 h-5" />
+            ) : (
+              <PanelLeftClose className="w-5 h-5" />
+            )}
+          </button>
         </div>
 
-        <nav
-          className={cn(
-            "flex-1 overflow-y-auto no-scrollbar",
-            isCollapsed ? "space-y-4" : "space-y-6"
-          )}
-        >
-          {Object.entries(groupedNav).map(([category, items]) => (
-            <div key={category}>
-              {!isCollapsed && (
-                <h3 className="px-3 mb-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                  {category}
-                </h3>
-              )}
-              <div className="space-y-1">
-                {items.map((item) => {
-                  const isActive = pathname === item.href;
-                  const Icon = item.icon;
+        <TooltipProvider delayDuration={0}>
+          <nav
+            className={cn(
+              "flex-1 overflow-y-auto no-scrollbar",
+              isCollapsed ? "space-y-4" : "space-y-6"
+            )}
+          >
+            {Object.entries(groupedNav).map(([category, items]) => (
+              <div key={category}>
+                {!isCollapsed && (
+                  <h3 className="px-3 mb-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    {category}
+                  </h3>
+                )}
+                <div className="space-y-1">
+                  {items.map((item) => {
+                    const isActive = pathname === item.href;
+                    const Icon = item.icon;
 
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={onClose}
-                      className={cn(
-                        "flex items-center rounded-lg font-medium transition-smooth text-sm group relative",
-                        isCollapsed ? "justify-center py-2.5" : "gap-3 px-3 py-2.5",
-                        isActive
-                          ? "bg-primary/10 text-primary"
-                          : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
-                      )}
-                      title={isCollapsed ? item.name : undefined}
-                    >
-                      <Icon className="w-5 h-5 shrink-0" />
-                      {!isCollapsed && <span className="truncate">{item.name}</span>}
+                    const LinkItem = (
+                      <Link
+                        href={item.href}
+                        onClick={onClose}
+                        className={cn(
+                          "flex items-center rounded-lg font-medium transition-smooth text-sm group",
+                          isCollapsed ? "justify-center py-2.5" : "gap-3 px-3 py-2.5",
+                          isActive
+                            ? "bg-primary/10 text-primary"
+                            : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+                        )}
+                      >
+                        <Icon className="w-5 h-5 shrink-0" />
+                        {!isCollapsed && <span className="truncate">{item.name}</span>}
+                      </Link>
+                    );
 
-                      {/* Tooltip for collapsed state */}
-                      {isCollapsed && (
-                        <span className="absolute left-full ml-2 px-2 py-1 bg-slate-900 dark:bg-slate-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
-                          {item.name}
-                        </span>
-                      )}
-                    </Link>
-                  );
-                })}
+                    if (isCollapsed) {
+                      return (
+                        <Tooltip key={item.name}>
+                          <TooltipTrigger asChild>{LinkItem}</TooltipTrigger>
+                          <TooltipContent side="right" className="font-medium">
+                            {item.name}
+                          </TooltipContent>
+                        </Tooltip>
+                      );
+                    }
+
+                    return <div key={item.name}>{LinkItem}</div>;
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
-        </nav>
+            ))}
+          </nav>
+        </TooltipProvider>
 
-        {/* Collapse Toggle - Desktop Only */}
-        <button
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className="hidden lg:flex items-center justify-center py-2 mb-4 text-slate-500 hover:text-primary transition-smooth bg-slate-100 dark:bg-slate-800 border-y border-slate-200 dark:border-slate-800"
-        >
-          {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
-        </button>
+        {/* Removed Collapse Toggle here */}
 
         {/* Pro Plan Card */}
         {!isCollapsed && (
